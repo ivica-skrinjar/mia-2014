@@ -1,7 +1,7 @@
 <?php
-const EMAIL = 'mia2014@math.hr';
-#const EMAIL = 'robi_petranovic@yahoo.com';
-#2014.mia-journal.com
+#const EMAIL = 'mia2014@math.hr';
+const EMAIL = 'robi_petranovic@yahoo.com';
+
 $errors = array();
 $mail_status = NULL;
 $name = $email = $organization = "";
@@ -13,7 +13,7 @@ if (isset($_POST['registration'])) {
 
 	if (strlen($name) === 0)
 		$errors['name'] = 'Please enter your name.';
-	else if (!preg_match("/[a-z ]/i", $name))
+	else if (!preg_match("/^[[:alpha:] ]+$/ui", $name))
 		$errors['name'] = 'Name must contain only letters and spaces.';
 
 	if (strlen($email) === 0)

@@ -8,27 +8,27 @@
     <div class="control-group <?= isset($errors['name']) ? 'error' : '' ?>">
 		<label class="control-label" for="name">Name:</label>
 		<div class="controls">
-			<input placeholder="Your full name" type="text" name="name" id="name" value="<?= $name ?>" />
+			<input placeholder="Your full name" type="text" name="name" id="name" value="<?= htmlspecialchars($name) ?>" />
 			<?php if (isset($errors['name'])): ?>
-				<span class="help-inline"><?= $errors['name'] ?></span>
+				<span class="help-inline"><?= htmlspecialchars($errors['name']) ?></span>
 			<?php endif ?>
 		</div>
 	</div>
 	<div class="control-group <?= isset($errors['email']) ? 'error' : '' ?>">
 		<label class="control-label" for="email">E-mail:</label>
 		<div class="controls">
-			<input placeholder="Your E-mail" type="text" name="email" id="email" value="<?= $email ?>" />
+			<input placeholder="Your E-mail" type="text" name="email" id="email" value="<?= htmlspecialchars($email) ?>" />
 			<?php if (isset($errors['email'])): ?>
-				<span class="help-inline"><?= $errors['email'] ?></span>
+				<span class="help-inline"><?= htmlspecialchars($errors['email']) ?></span>
 			<?php endif ?>
 		</div>
 	</div>
 	<div class="control-group <?= isset($errors['organization']) ? 'error' : '' ?>">
 		<label class="control-label" for="organization">Organization:</label>
 		<div class="controls">
-			<input type="text" id="organization" name="organization" value="<?= $organization ?>" />
+			<input type="text" id="organization" name="organization" value="<?= htmlspecialchars($organization) ?>" />
 			<?php if (isset($errors['organization'])): ?>
-				<span class="help-inline"><?= $errors['organization'] ?></span>
+				<span class="help-inline"><?= htmlspecialchars($errors['organization']) ?></span>
 			<?php endif ?>
 		</div>
 	</div>
@@ -39,7 +39,7 @@
 	</div>
 </form>	
 
-<?php if (isset($mail_status) && !$mail_status): ?>
+<?php if (isset($mail_status) && $mail_status): ?>
 	<div id="modal-mail" class="modal hide fade" tabindex="-1">
 		<div class="modal-header">
 			<h3>Mail sent successfully</h3>
@@ -53,7 +53,7 @@
 	</div>
 <?php endif ?>
 
-<?php if (isset($mail_status) && $mail_status): ?>
+<?php if (isset($mail_status) && !$mail_status): ?>
 	<div id="modal-mail" class="modal hide fade" tabindex="-1">
 		<div class="modal-header">
 			<h3 class="red">Mail failed to sent</h3>
