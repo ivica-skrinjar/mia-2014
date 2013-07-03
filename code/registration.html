@@ -1,0 +1,68 @@
+<h1>Registration and Abstracts</h1>
+<p>Please note that all persons intending to attend the Conference must register, including all plenary speakers, members of Scientific and Organising Committees.</p>
+<p>The deadline for registration is the May 15, 2008.</p>
+<p>Abstracts of invited lectures and accepted short communications should be sent to <a href="<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2008.</p>
+<p>Abstracts should contain up to 300 words, written in TeX, LaTeX or similar.</p>
+
+<form class="form-horizontal" action="" method="post">
+    <div class="control-group <?= isset($errors['name']) ? 'error' : '' ?>">
+		<label class="control-label" for="name">Name:</label>
+		<div class="controls">
+			<input placeholder="Your full name" type="text" name="name" id="name" value="<?= $name ?>" />
+			<?php if (isset($errors['name'])): ?>
+				<span class="help-inline"><?= $errors['name'] ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+	<div class="control-group <?= isset($errors['email']) ? 'error' : '' ?>">
+		<label class="control-label" for="email">E-mail:</label>
+		<div class="controls">
+			<input placeholder="Your E-mail" type="text" name="email" id="email" value="<?= $email ?>" />
+			<?php if (isset($errors['email'])): ?>
+				<span class="help-inline"><?= $errors['email'] ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+	<div class="control-group <?= isset($errors['organization']) ? 'error' : '' ?>">
+		<label class="control-label" for="organization">Organization:</label>
+		<div class="controls">
+			<input type="text" id="organization" name="organization" value="<?= $organization ?>" />
+			<?php if (isset($errors['organization'])): ?>
+				<span class="help-inline"><?= $errors['organization'] ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<input type="submit" class="btn btn-large btn-danger" name="registration" value="Register" />
+		</div>
+	</div>
+</form>	
+
+<?php if (isset($mail_status) && !$mail_status): ?>
+	<div id="modal-mail" class="modal hide fade" tabindex="-1">
+		<div class="modal-header">
+			<h3>Mail sent successfully</h3>
+		</div>
+		<div class="modal-body">
+			<p>You are registered to MIA-2014 event!</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+		</div>
+	</div>
+<?php endif ?>
+
+<?php if (isset($mail_status) && $mail_status): ?>
+	<div id="modal-mail" class="modal hide fade" tabindex="-1">
+		<div class="modal-header">
+			<h3 class="red">Mail failed to sent</h3>
+		</div>
+		<div class="modal-body">
+			<p>Please check if you inserted correct E-mail address and try again.</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Close</button>
+		</div>
+	</div>
+<?php endif ?>
