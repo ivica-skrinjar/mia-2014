@@ -27,7 +27,7 @@
           <a href="index.html" class="logo"></a>
         </div>
         <div class="span9">
-          <p class="header-title">Mathematical Inequalities and Applications 2014,<br /> <span class="red bold">July 8-14 2014</span>, Trogir - Split, Croatia</p>
+          <p class="header-title">Mathematical Inequalities and Applications 2014,<br /> <span class="red bold">June 22-26 2014</span>, Trogir, Croatia</p>
         </div>
       </div>
     </header>

@@ -1,12 +1,14 @@
 <h1>Registration and Abstracts</h1>
-<p>Please note that all persons intending to attend the Conference must register, including all plenary speakers, members of Scientific and Organising Committees.</p>
-<p>The deadline for registration is the May 15, 2008.</p>
-<p>Abstracts of invited lectures and accepted short communications should be sent to <a href="<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2008.</p>
+<p>Please note that all persons intending to attend the Conference must register, including all plenary speakers,
+members of Scientific and Organising Committees.</p>
+<p>The deadline for registration is the May 15, 2014.</p>
+<p>Abstracts of invited lectures and accepted short communications should be sent
+to <a href="<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2014.</p>
 <p>Abstracts should contain up to 300 words, written in TeX, LaTeX or similar.</p>
 
 <form class="form-horizontal" action="" method="post">
     <div class="control-group <?= isset($errors['name']) ? 'error' : '' ?>">
-		<label class="control-label" for="name">Name:</label>
+		<label class="control-label" for="name">Name:*</label>
 		<div class="controls">
 			<input placeholder="Your full name" type="text" name="name" id="name" value="<?= htmlspecialchars($name) ?>" />
 			<?php if (isset($errors['name'])): ?>
@@ -15,7 +17,7 @@
 		</div>
 	</div>
 	<div class="control-group <?= isset($errors['email']) ? 'error' : '' ?>">
-		<label class="control-label" for="email">E-mail:</label>
+		<label class="control-label" for="email">E-mail:*</label>
 		<div class="controls">
 			<input placeholder="Your E-mail" type="text" name="email" id="email" value="<?= htmlspecialchars($email) ?>" />
 			<?php if (isset($errors['email'])): ?>
@@ -23,12 +25,66 @@
 			<?php endif ?>
 		</div>
 	</div>
-	<div class="control-group <?= isset($errors['organization']) ? 'error' : '' ?>">
-		<label class="control-label" for="organization">Organization:</label>
+	<div class="control-group <?= isset($errors['affiliation']) ? 'error' : '' ?>">
+		<label class="control-label" for="affiliation">Affiliation:*</label>
 		<div class="controls">
-			<input type="text" id="organization" name="organization" value="<?= htmlspecialchars($organization) ?>" />
-			<?php if (isset($errors['organization'])): ?>
-				<span class="help-inline"><?= htmlspecialchars($errors['organization']) ?></span>
+			<input placeholder="Affiliation" type="text" id="affiliation" name="affiliation" value="<?= htmlspecialchars($affiliation) ?>" />
+			<?php if (isset($errors['affiliation'])): ?>
+				<span class="help-inline"><?= htmlspecialchars($errors['affiliation']) ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+	<div class="control-group <?= isset($errors['address']) ? 'error' : '' ?>">
+		<label class="control-label" for="address">Address:*</label>
+		<div class="controls">
+			<input placeholder="Your address" type="text" id="address" name="address" value="<?= htmlspecialchars($address) ?>" />
+			<?php if (isset($errors['address'])): ?>
+				<span class="help-inline"><?= htmlspecialchars($errors['address']) ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+	<div class="control-group <?= isset($errors['telephone']) ? 'error' : '' ?>">
+		<label class="control-label" for="telephone">Telephone:*</label>
+		<div class="controls">
+			<input placeholder="Your telephone number" type="text" id="telephone" name="telephone" value="<?= htmlspecialchars($telephone) ?>" />
+			<?php if (isset($errors['telephone'])): ?>
+				<span class="help-inline"><?= htmlspecialchars($errors['telephone']) ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+	<div class="control-group <?= isset($errors['fax']) ? 'error' : '' ?>">
+		<label class="control-label" for="fax">Fax:</label>
+		<div class="controls">
+			<input placeholder="Your fax number" type="text" id="fax" name="fax" value="<?= htmlspecialchars($fax) ?>" />
+			<?php if (isset($errors['fax'])): ?>
+				<span class="help-inline"><?= htmlspecialchars($errors['fax']) ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+	<div class="control-group <?= isset($errors['title_communication']) ? 'error' : '' ?>">
+		<label class="control-label" for="title_communication">Title of communication:*</label>
+		<div class="controls">
+			<input placeholder="Your title of communication" type="text" id="title_communication" name="title_communication" value="<?= htmlspecialchars($title_communication) ?>" />
+			<?php if (isset($errors['title_communication'])): ?>
+				<span class="help-inline"><?= htmlspecialchars($errors['title_communication']) ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+	<div class="control-group <?= isset($errors['accompany']) ? 'error' : '' ?>">
+		<label class="control-label" for="accompany">Accompany persons:</label>
+		<div class="controls">
+			<input placeholder="Name of persons" type="text" id="accompany" name="accompany" value="<?= htmlspecialchars($accompany) ?>" />
+			<?php if (isset($errors['accompany'])): ?>
+				<span class="help-inline"><?= htmlspecialchars($errors['accompany']) ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+	<div class="control-group <?= isset($errors['permition']) ? 'error' : '' ?>">
+		<label class="control-label" for="permition">Permition for putting name on web:*</label>
+		<div class="controls">
+					<input placeholder="Yes or No" type="text" id="permition" name="permition" value="<?= htmlspecialchars($permition) ?>" />
+			<?php if (isset($errors['permition'])): ?>
+				<span class="help-inline"><?= htmlspecialchars($errors['permition']) ?></span>
 			<?php endif ?>
 		</div>
 	</div>
@@ -37,8 +93,10 @@
 			<input type="submit" class="btn btn-large btn-danger" name="registration" value="Register" />
 		</div>
 	</div>
-</form>	
-
+</form>
+<p class="info muted border-top">
+  <small>* Polja označena zvijezdicom su obavezna!</small>
+</p>
 <?php if (isset($mail_status) && $mail_status): ?>
 	<div id="modal-mail" class="modal hide fade" tabindex="-1">
 		<div class="modal-header">
