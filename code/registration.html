@@ -7,7 +7,23 @@ to <a href="<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2014.</p>
 <p>Abstracts should contain up to 300 words, written in TeX, LaTeX or similar.</p>
 
 <form class="form-horizontal" action="" method="post">
-    <div class="control-group <?= isset($errors['name']) ? 'error' : '' ?>">
+  <div class="control-group <?= isset($errors['title']) ? 'error' : '' ?>">
+		<label class="control-label" for="title">Title:*</label>
+		<div class="controls">
+			<select id="title" name="title">
+				<option> </option>
+			  <option value="Prof">Prof</option>
+			  <option value="PhD">PhD</option>
+			  <option value="Mr">Mr</option>
+			  <option value="Mrs">Mrs</option>
+			  <option value="Ms">Ms</option>
+			</select>
+			<?php if (isset($errors['title'])): ?>
+				<span class="help-inline"><?= htmlspecialchars($errors['title']) ?></span>
+			<?php endif ?>
+		</div>
+	</div>
+  <div class="control-group <?= isset($errors['name']) ? 'error' : '' ?>">
 		<label class="control-label" for="name">Name:*</label>
 		<div class="controls">
 			<input placeholder="Your full name" type="text" name="name" id="name" value="<?= htmlspecialchars($name) ?>" />
@@ -35,7 +51,7 @@ to <a href="<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2014.</p>
 		</div>
 	</div>
 	<div class="control-group <?= isset($errors['address']) ? 'error' : '' ?>">
-		<label class="control-label" for="address">Address:*</label>
+		<label class="control-label" for="address">Address:</label>
 		<div class="controls">
 			<input placeholder="Your address" type="text" id="address" name="address" value="<?= htmlspecialchars($address) ?>" />
 			<?php if (isset($errors['address'])): ?>
@@ -44,7 +60,7 @@ to <a href="<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2014.</p>
 		</div>
 	</div>
 	<div class="control-group <?= isset($errors['telephone']) ? 'error' : '' ?>">
-		<label class="control-label" for="telephone">Telephone:*</label>
+		<label class="control-label" for="telephone">Telephone:</label>
 		<div class="controls">
 			<input placeholder="Your telephone number" type="text" id="telephone" name="telephone" value="<?= htmlspecialchars($telephone) ?>" />
 			<?php if (isset($errors['telephone'])): ?>
@@ -61,22 +77,16 @@ to <a href="<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2014.</p>
 			<?php endif ?>
 		</div>
 	</div>
-	<div class="control-group <?= isset($errors['title_communication']) ? 'error' : '' ?>">
-		<label class="control-label" for="title_communication">Title of communication:*</label>
+	<div class="control-group">
+		<label class="control-label" for="title_communication">Title of communication:</label>
 		<div class="controls">
 			<input placeholder="Your title of communication" type="text" id="title_communication" name="title_communication" value="<?= htmlspecialchars($title_communication) ?>" />
-			<?php if (isset($errors['title_communication'])): ?>
-				<span class="help-inline"><?= htmlspecialchars($errors['title_communication']) ?></span>
-			<?php endif ?>
 		</div>
 	</div>
-	<div class="control-group <?= isset($errors['accompany']) ? 'error' : '' ?>">
+	<div class="control-group">
 		<label class="control-label" for="accompany">Accompany persons:</label>
 		<div class="controls">
 			<input placeholder="Name of persons" type="text" id="accompany" name="accompany" value="<?= htmlspecialchars($accompany) ?>" />
-			<?php if (isset($errors['accompany'])): ?>
-				<span class="help-inline"><?= htmlspecialchars($errors['accompany']) ?></span>
-			<?php endif ?>
 		</div>
 	</div>
 	<div class="control-group <?= isset($errors['permition']) ? 'error' : '' ?>">
@@ -95,7 +105,7 @@ to <a href="<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2014.</p>
 	</div>
 </form>
 <p class="info muted border-top">
-  <small>* Polja označena zvijezdicom su obavezna!</small>
+  <small>* Required entries</small>
 </p>
 <?php if (isset($mail_status) && $mail_status): ?>
 	<div id="modal-mail" class="modal hide fade" tabindex="-1">
