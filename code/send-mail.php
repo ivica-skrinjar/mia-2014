@@ -1,5 +1,5 @@
 <?php
-const EMAIL = 'mia-2014@math.hr';
+const EMAIL = 'mia2014@pmfst.hr';
 
 $errors = array();
 $mail_status = NULL;

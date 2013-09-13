@@ -26,7 +26,7 @@ to <a href="<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2014.</p>
   <div class="control-group <?= isset($errors['name']) ? 'error' : '' ?>">
 		<label class="control-label" for="name">Name:*</label>
 		<div class="controls">
-			<input placeholder="Your full name" type="text" name="name" id="name" value="<?= htmlspecialchars($name) ?>" />
+			<input placeholder="Your full name(family+first name)" type="text" name="name" id="name" value="<?= htmlspecialchars($name) ?>" />
 			<?php if (isset($errors['name'])): ?>
 				<span class="help-inline"><?= htmlspecialchars($errors['name']) ?></span>
 			<?php endif ?>

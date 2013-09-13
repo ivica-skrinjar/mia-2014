@@ -6,10 +6,9 @@
       <div class="border-bottom padding-20">
         <div class="row-fluid">
           <div class="span6">
-            <h4>Faculty of Natural Sciences and Mathematics</h4>
+            <h4>Faculty of Science </h4>
             <ul class="unstyled">
-              <li>Faculty of Natural Sciences</li>
-              <li>Mathematics and Kinesiology</li>
+              <li>University of Split</li>
               <li>Nikole Tesle 12</li>
               <li>21000 Split, Croatia</li>
             </ul>
@@ -29,13 +28,13 @@
           <div class="span9">
             <h4>Organized by:</h4>
             <ul class="unstyled">
-              <li><a href="http://www.pmfst.hr">Faculty of Natural Sciences and Mathematics</a> of University of Split</li>
+              <li><a href="http://www.pmfst.hr">Faculty of Science</a> of University of Split</li>
               <li><a href="http://www.ttf.hr">Faculty of Textile Technology</a> of University of Zagreb</li>
             </ul>
           </div>
           <div class="span3">
             <h4>Contact:</h4>
-            <p>e-mail: <a href=mailto:mia2014@math.hr>mia2014@math.hr</a></p>
+            <p>e-mail: <a href="mailto:<?= EMAIL ?>"><?= EMAIL ?></a></p>
           </div>
         </div>
       </div>
