@@ -11,7 +11,7 @@ to <a href="mailto:<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2014.</p>
 		<label class="control-label" for="title">Title:*</label>
 		<div class="controls">
 			<select id="title" name="title">
-				<option selected="selected" value="" disabled="disabled">Your title</option>
+				<option <?=($title == '')? ' selected="selected"': ''?> value="" class="muted">Your title</option>
 			  <option <?=($title == 'Prof')? ' selected="selected"': ''?> value="Prof">Prof</option>
 			  <option <?=($title == 'PhD')? ' selected="selected"': ''?> value="PhD">PhD</option>
 			  <option <?=($title == 'Mr')? ' selected="selected"': ''?> value="Mr">Mr</option>
