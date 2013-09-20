@@ -1,5 +1,5 @@
 <?php
-const EMAIL = 'mia2014@pmfst.hr';
+const EMAIL = 'ivica.skrinjar@gmail.com';
 
 $errors = array();
 $mail_status = NULL;
@@ -45,6 +45,7 @@ if (isset($_POST['registration'])) {
 
 	if (count($errors) === 0) {
 		$body = <<<EOF
+Title: $title
 Name: $name
 E-mail: $email
 EOF;
