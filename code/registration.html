@@ -12,11 +12,11 @@ to <a href="mailto:<?= EMAIL ?>"><?= EMAIL ?></a> before May 1, 2014.</p>
 		<div class="controls">
 			<select id="title" name="title">
 				<option> </option>
-			  <option value="Prof">Prof</option>
-			  <option value="PhD">PhD</option>
-			  <option value="Mr">Mr</option>
-			  <option value="Mrs">Mrs</option>
-			  <option value="Ms">Ms</option>
+			  <option <?=($title == 'Prof')? ' selected="selected"': ''?> value="Prof">Prof</option>
+			  <option <?=($title == 'PhD')? ' selected="selected"': ''?> value="PhD">PhD</option>
+			  <option <?=($title == 'Mr')? ' selected="selected"': ''?> value="Mr">Mr</option>
+			  <option <?=($title == 'Mrs')? ' selected="selected"': ''?> value="Mrs">Mrs</option>
+			  <option <?=($title == 'Ms')? ' selected="selected"': ''?> value="Ms">Ms</option>
 			</select>
 			<?php if (isset($errors['title'])): ?>
 				<span class="help-inline"><?= htmlspecialchars($errors['title']) ?></span>

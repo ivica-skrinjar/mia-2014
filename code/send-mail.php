@@ -1,5 +1,5 @@
 <?php
-const EMAIL = 'mia2014@pmfst.hr';
+const EMAIL = 'ivica.skrinjar@gmail.com';
 
 $errors = array();
 $mail_status = NULL;
@@ -45,8 +45,17 @@ if (isset($_POST['registration'])) {
 
 	if (count($errors) === 0) {
 		$body = <<<EOF
+Title: $title
 Name: $name
 E-mail: $email
+Affiliation: $affiliation
+Address: $address
+Telephone: $telephone
+Fax: $fax
+Title of communication: $title_communication
+Accompany persons: $accompany
+Permition for putting name on web: $permition
+
 EOF;
 
 		$mail_status = mail(EMAIL, "Registration for MIA-2014.", $body, "From: $email\r\n");
