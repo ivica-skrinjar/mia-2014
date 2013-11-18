@@ -1,5 +1,8 @@
-<VirtualHost 127.0.0.1:1337>
-	ServerName mia-2014
+Listen 1337
+
+<VirtualHost localhost:1337>
+
+	ServerName 2014.mia-journal.com
 	DocumentRoot /var/www/mia-2014/code
 	
 	<Directory /var/www/mia-2014/code>
@@ -12,6 +15,7 @@
 		RewriteRule .* index.php?url=$0 [QSA,L]
 	</Directory>
 	
-	ErrorLog /var/www/mia-2014/logs/apache/error.log
 	CustomLog /var/www/mia-2014/logs/apache/access.log combined
+	ErrorLog /var/www/mia-2014/logs/apache/error.log
+  
 </VirtualHost>
