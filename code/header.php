@@ -23,8 +23,10 @@
   <div class="well append-vertical border-top-big-red border-bottom-big-red">
     <header id="header">
       <div class="row-fluid border-bottom-big append-bottom padding-20">
-        <div class="span3">
-          <a href="index.html" class="logo"></a>
+        <div class="span3 header-sidebar">
+          <a href="index.html" class="logo">
+            <img src="img/mia-logo.png" alt="Mia logo">
+          </a>
         </div>
         <div class="span9">
           <p class="header-title">Mathematical Inequalities and Applications 2014,<br /> <span class="red bold">June 22-26 2014</span>, Trogir, Croatia</p>
