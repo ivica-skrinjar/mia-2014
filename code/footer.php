@@ -28,7 +28,7 @@
           <div class="span9">
             <h4>Organized by:</h4>
             <ul class="unstyled">
-              <li><a href="http://www.pmfst.hr">Faculty of Science</a> of University of Split</li>
+              <li><a href="http://www.pmfst.hr/eng/">Faculty of Science</a> of University of Split</li>
               <li><a href="http://www.ttf.hr">Faculty of Textile Technology</a> of University of Zagreb</li>
             </ul>
           </div>
