@@ -6,7 +6,6 @@
       <li <?= ($url == "program.html") ? 'class="active"' : '' ?> ><a href="program.html">Conference Program</a></li>
       <li <?= ($url == "committees.html") ? 'class="active"' : '' ?> ><a href="committees.html">Committees</a></li>
       <li <?= ($url == "plenary.html") ? 'class="active"' : '' ?> ><a href="plenary.html">Plenary Speakers</a></li>
-      <li <?= ($url == "invited-lectures.html") ? 'class="active"' : '' ?> ><a href="invited-lectures.html">Invited Lectures</a></li>
       <li <?= ($url == "participants.html") ? 'class="active"' : '' ?> ><a href="participants.html">Participants</a></li>
       <li <?= ($url == "fee.html") ? 'class="active"' : '' ?> ><a href="fee.html">Conference Fee</a></li>
       <li <?= ($url == "registration.html") ? 'class="active"' : '' ?> ><a href="registration.html" class="bold">Registration and Abstracts</a></li>
